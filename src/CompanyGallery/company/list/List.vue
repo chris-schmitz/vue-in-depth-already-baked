@@ -16,10 +16,12 @@
 </script>
 
 <template>
-    <table class="table">
+    <table class="table company-list">
         <tr v-for="company in companies">
             <td>
-                {{ company.name }}
+                <span>
+                    {{ company.name }}
+                </span>
                 <button v-on:click="show(company)" class="btn btn-primary pull-right">
                     <i class="fa fa-info-circle"></i>
                 </button>
@@ -28,5 +30,10 @@
     </table>
 </template>
 
-<style lang="">
+<style lang="sass">
+    .company-list{
+        button{
+            margin-right: 7px;
+        }
+    }
 </style>

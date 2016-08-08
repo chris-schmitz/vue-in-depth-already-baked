@@ -43,7 +43,7 @@
     <div class="clearfix">
         <button v-if="showBackToListButton" @click="goToListView" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i></button>
         <button v-if="showEditButton" @click="editCompany" class="btn btn-success pull-right"><i class="fa fa-pencil-square-o"></i></button>
-        <button v-if="showCreateButton" @click="createANewCompany" class="btn btn-success"><i class="fa fa-plus-circle"></i></button>
+        <button v-if="showCreateButton" @click="createANewCompany" class="btn btn-success pull-right"><i class="fa fa-plus-circle"></i></button>
         <button v-if="showSaveButton" @click="saveChanges" class="btn btn-success pull-right"><i class="fa fa-floppy-o"></i></button>
     </div>
 </template>

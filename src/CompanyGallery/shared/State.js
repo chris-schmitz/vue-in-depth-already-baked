@@ -1,7 +1,7 @@
 let companies = [
-    {id: 1,name: 'XYZ company'},
-    {id: 2,name: 'LOL inc'},
-    {id: 3,name: 'OMG.co'},
+    {id: 1, name: 'XYZ company'},
+    {id: 2, name: 'LOL inc'},
+    {id: 3, name: 'OMG.co'},
 ]
 
 
@@ -9,7 +9,7 @@ let getCompanies = () => {
     if(companies.length > 0){
         return companies
     }
-    return []
+    return [{id: null, name: ''}]
 }
 
 let getCompanyById = (id) => {
@@ -21,5 +21,3 @@ module.exports = {
     getCompanyById,
     companies
 }
-
-// exports.companies = companies

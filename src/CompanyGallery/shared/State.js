@@ -1,23 +1,21 @@
-let companies = [
-    {id: 1, name: 'XYZ company'},
-    {id: 2, name: 'LOL inc'},
-    {id: 3, name: 'OMG.co'},
-]
+import testData from './TestData'
 
-
-let getCompanies = () => {
-    if(companies.length > 0){
-        return companies
-    }
-    return [{id: null, name: ''}]
+let state = {
+    companies: []
 }
 
+let setCompanies = (companies = []) => {
+    state.companies = companies
+}
+// for test data
+setCompanies(testData)
+
 let getCompanyById = (id) => {
-    return getCompanies().filter(company => Number(id) === company.id)
+    let resultArray = state.companies.filter(company => Number(id) === company.id)
+    return resultArray.length === 0 ? {} : resultArray[0]
 }
 
 module.exports = {
-    getCompanies,
     getCompanyById,
-    companies
+    'companies': state.companies
 }

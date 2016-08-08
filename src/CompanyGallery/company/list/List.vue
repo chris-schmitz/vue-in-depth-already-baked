@@ -4,7 +4,8 @@
     module.exports = {
         data: () => {
             return {
-                companies: state.getCompanies()
+                // state: state,
+                companies: state.companies
             }
         },
         methods: {

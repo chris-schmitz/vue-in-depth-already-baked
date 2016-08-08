@@ -1,6 +1,7 @@
 export default [
     {
         id: 1,
+        active: true,
         name: "ABC Company",
         address: "123 main st",
         city: "Saint",
@@ -16,6 +17,7 @@ export default [
     },
     {
         id: 2,
+        active: true,
         name: "LOL Inc",
         address: "555 Avenue st",
         city: "Saint",
@@ -31,6 +33,7 @@ export default [
     },
     {
         id: 3,
+        active: true,
         name: "OMG.co",
         address: "321 OneTwoThree rd",
         city: "Saint",

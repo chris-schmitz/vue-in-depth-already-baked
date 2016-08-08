@@ -2,7 +2,9 @@
     import State from './State'
     module.exports = {
         data: () => {
-            return {}
+            return {
+                contacts: []
+            }
         },
         computed:{
             displayMode(){
@@ -13,9 +15,14 @@
                 } else {
                     return 'review'
                 }
-            },
-            company(){
-                return State.getCompanyById(this.$route.params.id)
+            }
+        },
+        ready(){
+            let company = State.getCompanyById(this.$route.params.id)
+            if(Object.getOwnPropertyNames(company).length === 0){
+                this.contacts.push(State.getNullContact())
+            } else {
+                this.contacts = company.contacts
             }
         }
     }
@@ -33,14 +40,14 @@
                 <th>Last Name</th>
                 <th>Email</th>
             </tr>
-            <tr v-if="displayMode === 'review'" v-for="contact in company.contacts">
+            <tr v-if="displayMode === 'review'" v-for="contact in contacts">
                 <td>{{ contact.first_name }}</td>
                 <td>{{ contact.last_name }}</td>
                 <td>
                     <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
                 </td>
             </tr>
-            <tr v-if="displayMode === 'edit'">
+            <tr v-if="displayMode === 'edit' || displayMode === 'create'" v-for="contact in contacts">
                 <td>
                     <input type="checkbox" v-model="contact.active">
                 </td>

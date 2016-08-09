@@ -12,7 +12,11 @@ setCompanies(testData)
 
 let getCompanyById = (id) => {
     let resultArray = state.companies.filter(company => Number(id) === company.id)
-    return resultArray.length === 0 ? {} : resultArray[0]
+    return resultArray.length === 0 ? getNullCompany() : resultArray[0]
+}
+
+let getNullCompany = () => {
+    return { id: null, active: null, name: null, address: null, city: null, state: null, zip: null, contacts:[], pictures:[] }
 }
 
 let getNullContact = () => {
@@ -21,8 +25,13 @@ let getNullContact = () => {
     return {active: null, first_name: null, last_name:null, email: null}
 }
 
+let getNullPicture = () => {
+    return {file_name: null, url: null}
+}
+
 module.exports = {
     getCompanyById,
     getNullContact,
+    getNullPicture,
     'companies': state.companies
 }

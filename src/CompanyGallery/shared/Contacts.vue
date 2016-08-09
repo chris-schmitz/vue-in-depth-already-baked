@@ -1,8 +1,12 @@
 <script>
     import State from './State'
+    import CompanyTools from './CompanyTools'
+
     module.exports = {
+        mixins: [CompanyTools],
         data: () => {
             return {
+                company: null,
                 contacts: []
             }
         },
@@ -21,18 +25,17 @@
             }
         },
         ready(){
-            let company = State.getCompanyById(this.$route.params.id)
-            if(Object.getOwnPropertyNames(company).length === 0){
-                this.contacts.push(State.getNullContact())
+            if(this.hasContacts()){
+                this.contacts = this.company.contacts
             } else {
-                this.contacts = company.contacts
+                this.contacts.push(State.getNullContact())
             }
         },
         methods:{
             create(){
                 this.contacts.push(State.getNullContact())
             },
-            delete(contact){
+            remove(contact){
                 this.contacts.pop(contact)
             }
         }
@@ -55,7 +58,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-if="displayMode === 'review'" v-for="contact in contacts">
+                <tr v-if="displayMode === 'review' && contact.active === true" v-for="contact in contacts">
                     <td>{{ contact.first_name }}</td>
                     <td>{{ contact.last_name }}</td>
                     <td>
@@ -76,7 +79,7 @@
                         <input v-model="contact.email">
                     </td>
                     <td>
-                        <button v-if="editOrCreate" class="btn btn-danger" @click="delete(contact)"><i class="fa fa-trash"></i></button>
+                        <button v-if="editOrCreate" class="btn btn-danger" @click="remove(contact)"><i class="fa fa-trash"></i></button>
                     </td>
                 </tr>
             </tbody>
@@ -93,14 +96,27 @@
     $columnHeader-color: black;
 
     .contacts-container{
+        position: relative;
+
 
         .panel-heading{
             display:flex;
             justify-content:center;
         }
 
+
+        .panel-footer{
+            position: absolute;
+            bottom: 0;
+            width:100%;
+        }
+
         table{
             width: 100%;
+            // This is the hight of the panel footer. We need this here so that when we add a new row
+            // to the contacts list, the footer (which we have to anchor to the bottom of the panel because, bootstrap :|)
+            // doesn't cover the new row.
+            margin-bottom: 57px;
 
             thead{
                 background-color: $columnHeader-backgroundColor;

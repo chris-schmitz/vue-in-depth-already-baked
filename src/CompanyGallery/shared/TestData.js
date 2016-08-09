@@ -11,8 +11,9 @@ export default [
             {first_name: "Zoe", last_name: "Dog", email: "zoe@abc.com", active: true}
         ],
         pictures:[
-            {file_name: "abc.png", url: "http://mysite.com/pictures/{companyid}/{file_name}"},
-            {file_name: "lol.png", url: "http://mysite.com/pictures/{companyid}/{file_name}"}
+            {file_name: "abc.png", url: "https://placekitten.com/201/209"},
+            {file_name: "lol.png", url: "https://placekitten.com/302/306"},
+            {file_name: "lol.png", url: "https://placekitten.com/303/309"},
         ]
     },
     {
@@ -27,8 +28,11 @@ export default [
             {first_name: "Petey", last_name: "Puppy", email: "petey@gmail.com", active: true},
         ],
         pictures:[
-            {file_name: "abc.png", url: "http://mysite.com/pictures/{companyid}/{file_name}"},
-            {file_name: "lol.png", url: "http://mysite.com/pictures/{companyid}/{file_name}"}
+            {file_name: "abc.png", url: "https://placekitten.com/201/200"},
+            {file_name: "lol.png", url: "https://placekitten.com/302/301"},
+            {file_name: "lol.png", url: "https://placekitten.com/303/302"},
+            {file_name: "lol.png", url: "https://placekitten.com/304/303"},
+            {file_name: "lol.png", url: "https://placekitten.com/305/304"}
         ]
     },
     {
@@ -45,8 +49,14 @@ export default [
             {first_name: "Daughter", last_name: "Person", email: "daughter@test.com", active: true}
         ],
         pictures:[
-            {file_name: "abc.png", url: "http://mysite.com/pictures/{companyid}/{file_name}"},
-            {file_name: "lol.png", url: "http://mysite.com/pictures/{companyid}/{file_name}"}
+            {file_name: "abc.png", url: "https://placekitten.com/200/200"},
+            {file_name: "lol.png", url: "https://placekitten.com/300/301"},
+            {file_name: "lol.png", url: "https://placekitten.com/300/302"},
+            {file_name: "lol.png", url: "https://placekitten.com/300/303"},
+            {file_name: "lol.png", url: "https://placekitten.com/300/304"},
+            {file_name: "lol.png", url: "https://placekitten.com/300/305"},
+            {file_name: "lol.png", url: "https://placekitten.com/300/306"},
+            {file_name: "lol.png", url: "https://placekitten.com/300/307"}
         ]
     }
 ]

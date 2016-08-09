@@ -1,5 +1,6 @@
 <template>
   <div id="app" class="container">
+    <mask></mask>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3>Companies</h3>
@@ -14,15 +15,24 @@
 
 <script>
   import Actions from './components/Actions.vue'
+  import Mask from './components/Mask.vue'
 
   export default {
-    components:{ Actions },
+    components:{ Actions, Mask },
     data () {
       return {}
     },
     router:{
       activate: () => {
         console.log('activate fired from component')
+      }
+    },
+    events:{
+      applyMask: function (...payload){
+        this.$broadcast('applyMask', ...payload)
+      },
+      removeMask: function (...payload){
+        this.$broadcast('removeMask', ...payload)
       }
     }
 

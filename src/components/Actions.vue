@@ -27,12 +27,21 @@
                 this.$router.go({name:'companyList'})
             },
             createANewCompany() {
+                // mask
+                // create a new company
+                // unmask
+                // navigate
                 this.$router.go({name:'createCompany', params:{ id: 'new' }})
             },
             editCompany() {
                 this.$router.go({name:'editCompany', params:{ id: this.$route.params.id }})
             },
             saveChanges() {
+                // so what do we need to handle here?
+                // EVERYTHING happening from here should be a PUT command, i.e. if we're editing an existing
+                // company we want to transfer that company's state back up to the server (not just update what's there in case someone deleted data)
+                // but also, if we're creating a new company, the creation of the record should happen at the `createANewCompany` level, not here. We
+                // already need the id for this company.
                 this.$router.go({name:'reviewCompany', params:{ id: this.$route.params.id }})
             }
         }

@@ -20,6 +20,7 @@
     "bootstrap-sass": "^3.3.7",
     "cross-env": "^1.0.6",
     "css-loader": "^0.23.1",
+    "dropzone": "^4.3.0",
     "file-loader": "^0.8.5",
     "font-awesome": "^4.6.3",
     "json-loader": "^0.5.4",

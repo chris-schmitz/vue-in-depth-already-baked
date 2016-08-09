@@ -4,7 +4,7 @@
       <div class="panel-heading">
         <h3>Companies</h3>
       </div>
-      <router-view></router-view>
+      <router-view transition="flip" transition-mode="out-in" class="animated"></router-view>
       <div class="panel-footer">
         <actions></actions>
       </div>
@@ -19,7 +19,13 @@
     components:{ Actions },
     data () {
       return {}
+    },
+    router:{
+      activate: () => {
+        console.log('activate fired from component')
+      }
     }
+
   }
 </script>
 

@@ -1,9 +1,25 @@
-
-$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "./_variables-and-overrides.scss";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 @import "~font-awesome/css/font-awesome.css";
 @import "~animate.css/animate.min.css";
 
+html,body{
+    height:100%;
+    width:100%;
+}
+
+body{
+    background:
+        linear-gradient(
+            rgba($dark, .9),
+            rgba($purple, .3)
+        ),
+        // url('../assets/tiny_grid.png')
+        //url('../assets/noisy_grid.png')
+    ;
+    // background-repeat: repeat;
+    color: $dark;
+}
 
 i.fa{
     font-size:20px;

@@ -1,0 +1,64 @@
+$purple: #D800E5;
+$dark: #010B3A;
+$light-text: white;
+$dark-text: darken(#010B3A, 10%);
+$red: #FB0026;
+$blue: #2300F5;
+$green: #00F503;
+$yellow: #F5EC00;
+$orange: #FF494F;
+
+// Bootstrap overrides
+$brand-primary:         $blue;
+$brand-success:         $green;
+$brand-info:            $blue;
+$brand-warning:         $yellow;
+$brand-danger:          $red;
+
+
+$body-bg: $dark;
+$text-color: $dark-text;
+
+$link-color:            $purple;
+$link-hover-color:      darken($link-color, 15%);
+$link-hover-decoration: underline;
+
+
+$well-bg: $blue;
+$border-radius-base: 2px;
+
+$panel-border-radius: 2px;
+
+$panel-default-heading-bg: $purple;
+$panel-default-text: $light-text;
+
+$panel-primary-heading-bg: $blue;
+$panel-primary-text: $light-text;
+
+// buttons
+$btn-primary-bg: $blue;
+$btn-primary-color:$light-text;
+$btn-primary-border: darken($btn-primary-bg, 5%);
+
+$btn-success-bg: $green;
+$btn-success-color:$light-text;
+$btn-success-border: darken($btn-success-bg, 5%);
+
+$btn-danger-bg: $red;
+$btn-danger-color:$light-text;
+$btn-danger-border: darken($btn-danger-bg, 5%);
+
+$state-success-text: $dark-text;
+$state-success-bg: $green;
+$state-success-border: darken(adjust-hue($state-success-bg, -10), 5%);
+$state-info-text: $light-text;
+$state-info-bg: $blue;
+$state-info-border: darken(adjust-hue($state-info-bg, -10), 7%);
+$state-warning-text: $dark-text;
+$state-warning-bg: $yellow;
+$state-warning-border: darken(adjust-hue($state-warning-bg, -10), 5%);
+$state-danger-text: $light-text;
+$state-danger-bg: $red;
+$state-danger-border: darken(adjust-hue($state-danger-bg, -10), 5%);
+
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";

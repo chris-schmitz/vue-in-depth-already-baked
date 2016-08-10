@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueResource from 'vue-resource'
+
+Vue.use(VueResource)
 
 import style from './sass/global.scss'
 
@@ -24,6 +27,10 @@ Vue.transition('fade',{
 Vue.use(VueRouter)
 let router = new VueRouter()
 
+router.redirect({
+    '/': '/list'
+})
+
 router.map({
     '/list':{
         name: 'companyList',
@@ -42,5 +49,6 @@ router.map({
         component: Build
     }
 })
+// Vue.http.headers.common['Access-Control-Allow-Origin'] = 'http://localhost:8080'
 
 router.start(App, '#app')
